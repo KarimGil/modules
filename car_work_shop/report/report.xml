@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+
+        <record id="report_vehicle_details" model="ir.actions.report">
+            <field name="name">Vehicle Report</field>
+            <field name="model">car</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">car_work_shop.report_vehicle_detail</field>
+            <field name="report_file">car_work_shop.report_vehicle_detail</field>
+            <field name="binding_model_id" ref="model_car"/>
+            <field name="binding_type">report</field>
+        </record>
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="report_vehicle_detail">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+<!--                            <h2><span t-field="o.model"/> Report.</h2>-->
+<!--                            <img t-if="o.image"-->
+<!--                                   t-attf-src="data:image/*;base64,{{o.image}}"-->
+<!--                                 height="300" border="1" width="250" />-->
+                            <div class="card mb-3">
+                                <img class="card-img-top" t-if="o.image"
+                                   t-attf-src="data:image/*;base64,{{o.image}}" />
+                                <div class="card-body">
+                                    <h5 class="card-title text-center"><span t-field="o.company_name"/>  <span t-field="o.model"/></h5>
+                                </div>
+                            </div>
+                            <ul class="list-group">
+                              <li class="list-group-item text-center">Brand Name : <span t-field="o.company_name"/></li>
+                              <li class="list-group-item text-center">Car Model : <span t-field="o.model"/></li>
+                              <li class="list-group-item text-center">Launch Year : <span t-field="o.model_year"/></li>
+                              <li class="list-group-item text-center">Color : <span t-field="o.color"/></li>
+                              <li class="list-group-item text-center">Spare Parts Bought : <span t-field="o.reffer_id"/></li>
+                                <li class="list-group-item text-center">License Plate : <span t-field="o.license_plate"/></li>
+                                <li class="list-group-item text-center">Last Odometer : <span t-field="o.odometer"/></li>
+                                <li class="list-group-item text-center">Immatriculation Date :  <span t-field="o.immatriculation_date"/></li>
+                                <li class="list-group-item text-center">Chassis : <span t-field="o.chassis"/></li>
+                            </ul>
+                        </div>
+                    </t>
+                </t>
+            </t>
+
+        </template>
+    </data>
+</odoo>

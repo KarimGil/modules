@@ -1,0 +1,127 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="practice.list">
+      <field name="name">practice list</field>
+      <field name="model">practice.practice</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="practice.action_window">
+      <field name="name">practice window</field>
+      <field name="res_model">practice.practice</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="practice.action_server">
+      <field name="name">practice server</field>
+      <field name="model_id" ref="model_practice_practice"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="practice" id="practice.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="practice.menu_1" parent="practice.menu_root"/>
+    <menuitem name="Menu 2" id="practice.menu_2" parent="practice.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="practice.menu_1_list" parent="practice.menu_1"
+              action="practice.action_window"/>
+    <menuitem name="Server to list" id="practice" parent="practice.menu_2"
+              action="practice.action_server"/>
+
+
+-->
+
+      <record id="staff_tree" model="ir.ui.view">
+            <field name="name">office.staff.tree</field>
+            <field name="model">office.staff</field>
+            <field name="arch" type="xml">
+               <tree string="Employees">
+                   <field name="seq_name"/>
+                   <field name="first_name"/>
+                   <field name="last_name"/>
+                   <field name="age"/>
+                   <field name="notes"/>
+               </tree>
+
+            </field>
+        </record>
+
+
+      <record id="staff_form" model="ir.ui.view">
+            <field name="name">office.staff.home</field>
+            <field name="model">office.staff</field>
+            <field name="arch" type="xml">
+                <br/>
+                <h3>Create new Employee</h3>
+                <form string="Employees">
+                    <div class="oe_title">
+                        <h1>
+                            <field name="seq_name" readonly="1"/>
+                        </h1>
+                    </div>
+                       <group>
+                            <group>
+                                <field name="first_name"/>
+                                <field name="notes"/>
+                                <field name="image"/>
+
+                            </group>
+                           <group>
+                                <field name="last_name"/>
+                                <field name="age"/>
+                           </group>
+                       </group>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+    <record id="action_office" model="ir.actions.act_window">
+            <field name="name">Staffs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">office.staff</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Hire new Employees, and enter their details here!
+              </p>
+            </field>
+        </record>
+
+    <menuitem id="office_details" name="Office" sequence="2" web_icon="office.staff/static/description/icon.png"/>
+    <menuitem id="office_staff" name="Staff" parent="office_details" action="action_office"/>
+
+  </data>
+</odoo>

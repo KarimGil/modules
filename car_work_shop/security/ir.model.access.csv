@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_car,access.car,model_car,,1,1,1,1,
+access_spare_parts,access.spare.parts,model_spare_parts,,1,1,1,1

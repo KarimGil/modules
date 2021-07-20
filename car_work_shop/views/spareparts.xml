@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+
+
+
+        <record id="action_spare_parts" model="ir.actions.act_window">
+            <field name="name">Spare Parts</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">spare.parts</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                  List available spare parts here!
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="spare_parts" name="Spare Parts" parent="car_listings" action="action_spare_parts"/>
+
+
+    </data>
+</odoo>
+
