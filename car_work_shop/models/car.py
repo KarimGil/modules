@@ -10,6 +10,10 @@ class Car(models.Model):
     _description = 'We provide services for this cars'
     _rec_name = 'model'
 
+    def test_cron_job(self):
+        for rec in self:
+            print('abcd', rec)
+
 
     def print_report(self):
         return self.env.ref('car_work_shop.report_vehicle_detail').report_action(self)

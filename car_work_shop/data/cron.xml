@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
         <record id="confirm_cron" model="ir.cron">
             <field name="name">Confirm Entry</field>
             <field name="model_id" ref="model_car"/>
+            <field name="type">ir.actions.server</field>
             <field name="state">code</field>
-            <field name="code">model._check(True)</field>
-            <field name="interval_number">4</field>
+            <field name="code">model.test_cron_job()</field>
+            <field name="interval_number">1</field>
             <field name="interval_type">hours</field>
-            <field name="numbercall">-1</field>
-            <field name="doall" eval="False"/>
-            <field name="active" eval="False" />
+            <field name="numbercall">1</field>
+            <field name="active" eval="True" />
         </record>
     </data>
 </odoo>

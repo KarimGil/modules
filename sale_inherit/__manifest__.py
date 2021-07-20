@@ -13,6 +13,7 @@
                 'views/prescription.xml',
                 'views/sales.xml',
                 'data/sequence.xml',
+
               ],
     'installable' : True,
     'application' : True,

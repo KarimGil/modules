@@ -16,6 +16,7 @@
                 'data/sequence.xml',
                 'report/report.xml',
                 'report/vehicle_detail_template.xml',
+                'data/cron.xml',
 
               ],
     'installable' : True,
